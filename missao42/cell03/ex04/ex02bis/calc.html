@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" placeholder="Digite um numero" id="numero1">
+    <select name="operador" id="operador">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="number" placeholder="Digite um numero" id="numero2">
+    <input type="button" value="Try me!" id="calcularBtn">
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("#calcularBtn").click(function () {
+            var numero1 = parseFloat($("#numero1").val());
+            var operador = $("#operador").val();
+            var numero2 = parseFloat($("#numero2").val());
+
+            if (numero1 <= 0 || numero2 <= 0) {
+                alert("Error :(");
+                return;
+            }
+
+            var resultado;
+
+            switch (operador) {
+                case "+":
+                    resultado = numero1 + numero2;
+                    break;
+                case "-":
+                    resultado = numero1 - numero2;
+                    break;
+                case "*":
+                    resultado = numero1 * numero2;
+                    break;
+                case "/":
+                    if (numero2 !== 0) {
+                        resultado = numero1 / numero2;
+                    } else {
+                        alert("It’s over 9000!");
+                        return;
+                    }
+                    break;
+                case "%":
+                    if (numero2 !== 0) {
+                        resultado = numero1 % numero2;
+                    } else {
+                        alert("It’s over 9000!");
+                        return;
+                    }
+                    break;
+                default:
+                    alert("Error :(");
+                    return;
+            }
+
+            console.log("Resultado:", resultado);
+            alert("Resultado: " + resultado);
+        });
+
+        function exibirAlerta() {
+            alert("Please, use me...");
+        }
+        setInterval(exibirAlerta, 30000);
+    });
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+        <input type="number" placeholder="Digite um numero" id="numero1">
+        <select name="operador" id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" placeholder="Digite um numero" id="numero2">
+        <input type="submit" value="Try me!" onclick="calcular()">
+</body>
+</html>
+
+<script>   
+    // Função para exibir o alerta
+    
+    function calcular() {
+    let numero1 = parseFloat(document.getElementById("numero1").value);
+    let operador = document.getElementById("operador").value;
+    let numero2 = parseFloat(document.getElementById("numero2").value);
+
+    if (numero1 <= 0 || numero2 <= 0) {
+        alert("Error :(");
+        return;
+    }
+
+    let resultado;
+
+    switch (operador) {
+        case "+":
+            resultado = numero1 + numero2;
+            break;
+        case "-":
+            resultado = numero1 - numero2;
+            break;
+        case "*":
+            resultado = numero1 * numero2;
+            break;
+        case "/":
+            // Verifica se o divisor é zero para evitar divisão por zero
+            if (numero2 !== 0) {
+                resultado = numero1 / numero2;
+            } else {
+                alert("Its over 9000!");
+                return;
+            }
+            break;
+        case "%":
+            // Verifica se o divisor é zero para evitar divisão por zero
+            if (numero2 !== 0) {
+                resultado = numero1 % numero2;
+            } else {
+                alert("Its over 9000!");
+                return;
+            }
+            break;
+        default:
+            alert("Error :(");
+            return;
+    }
+
+    console.log("Resultado:", resultado);
+    alert("Resultado: " + resultado);
+}
+
+function exibirAlerta() {
+    alert("Please, use me...");
+}
+setInterval(exibirAlerta, 30000);
+
+
+</script>

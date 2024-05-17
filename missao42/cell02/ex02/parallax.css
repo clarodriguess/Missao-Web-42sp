@@ -1,0 +1,25 @@
+section{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem{
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#img01{
+    background-image: url('https://www.royalcitytours.com/wp-content/uploads/2020/07/SKYLINE-NIGHT-2-scaled.jpg');
+}
+
+p{
+    color: white;
+    text-align: center; 
+}
+
+#img02{
+    background-image: url('https://wallpaperaccess.com/full/1137443.jpg');
+}

@@ -1,0 +1,17 @@
+
+table,td {
+    border: 1px solid;
+}
+
+table {
+  width: 100%;
+  height: 100vh;
+}
+
+#col1{
+    background-color: rgb(233, 189, 223);
+}
+
+#col2{
+    background-color: rgb(126, 228, 157);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balão</title>
+<style>
+    .divToGrow {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="divToGrow"></div>
+
+<script>
+$(document).ready(function(){
+    var colors = ["red", "green", "blue"];
+    var currentColorIndex = 0;
+
+    $(".divToGrow").click(function(){
+        var width = $(this).width();
+        var height = $(this).height();
+
+        width = Math.min(width + 10, 420);
+        height = Math.min(height + 10, 420);
+
+        $(this).width(width).height(height);
+
+        if (width === 420 && height === 420) {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            $(this).css("background-color", colors[currentColorIndex]).width(200).height(200);
+        } else {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            $(this).css("background-color", colors[currentColorIndex]);
+        }
+    });
+
+    $(".divToGrow").mouseout(function(){
+        var width = $(this).width();
+        var height = $(this).height();
+
+        width = Math.max(width - 5, 200);
+        height = Math.max(height - 5, 200);
+
+        $(this).width(width).height(height);
+
+        currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+        $(this).css("background-color", colors[currentColorIndex]);
+    });
+});
+</script>
+
+</body>
+</html>

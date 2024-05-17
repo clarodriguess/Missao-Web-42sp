@@ -1,0 +1,27 @@
+.botao {
+    background-color: rgb(140, 107, 143);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+.links {
+    display: none;
+    background-color: rgb(211, 142, 194);
+    min-width: 200px;
+}
+.links a {
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.menu:hover .links {
+    display: block;
+}

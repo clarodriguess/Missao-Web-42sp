@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(211, 173, 247)    ;
+}
+header .container{
+    height: 110px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#logo{
+width: 150px;   
+}
+
+#menu{
+display: flex;
+list-style: none;
+}
+
+#menu a{
+margin: 0 2rem;
+color: rgb(55, 27, 114);
+font-size: 1rem;
+text-decoration: none;
+}

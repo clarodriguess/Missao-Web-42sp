@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ballon</title>
+<style>
+    .divToGrow {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+    }
+</style>
+</head>
+<body>
+
+<div class="divToGrow" onclick="aumentarDiv(this)" onmouseout="diminuirDiv(this)"></div>
+
+<script>
+var colors = ["red", "green", "blue"]; // Cores para a div
+var currentColorIndex = 0; // Índice da cor atual
+
+function aumentarDiv(element) {
+    // Obtém a largura e a altura atual da div
+    var width = element.offsetWidth;
+    var height = element.offsetHeight;
+    
+    // Aumenta a largura e a altura em 10px, desde que não ultrapasse 420px
+    width = Math.min(width + 10, 420);
+    height = Math.min(height + 10, 420);
+    
+    // Define a nova largura e altura da div
+    element.style.width = width + "px";
+    element.style.height = height + "px";
+    
+    // Verifica se a largura alcançou 420px
+    if (width === 420 && height === 420) {
+        // Se sim, muda a cor
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        element.style.backgroundColor = colors[currentColorIndex];
+        // Reinicia a largura e altura para 200px
+        element.style.width = "200px";
+        element.style.height = "200px";
+    } else {
+        // Se não, apenas muda a cor
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        element.style.backgroundColor = colors[currentColorIndex];
+    }
+}
+
+function diminuirDiv(element) {
+    // Obtém a largura e a altura atual da div
+    var width = element.offsetWidth;
+    var height = element.offsetHeight;
+    
+    // Reduz a largura e a altura em 5px, desde que não fiquem menores que 200px
+    width = Math.max(width - 5, 200);
+    height = Math.max(height - 5, 200);
+    
+    // Define a nova largura e altura da div
+    element.style.width = width + "px";
+    element.style.height = height + "px";
+    
+    // Muda a cor na ordem inversa
+    currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+    element.style.backgroundColor = colors[currentColorIndex];
+}
+</script>
+
+</body>
+</html>
+

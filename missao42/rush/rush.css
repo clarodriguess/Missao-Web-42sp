@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+/*font-family: "Montserrat", sans-serif;*/
+
+*{ 
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+body{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+/*header*/
+
+header .container{
+    position: fixed;
+    height: 110px;
+    width: 100vw;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu{
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+}
+
+#menu a{
+    margin: 0 2rem;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+#menu a:hover{
+    color: #fffb00;
+    cursor: pointer;
+}
+
+/*home*/
+.img{    
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+}
+
+#banner{
+    background-image: url(https://www.guarulhoshoje.com.br/wp-content/uploads/2022/04/3635912803_f4c5095872_o-1.jpg); 
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#banner h1, h2{
+    text-transform: uppercase;
+    margin: 3px 50px;
+    color: white;
+    font-size: 2rem;
+}
+/*fim do home*/
+
+/*exp e habilidades*/
+
+#experiencia{
+    margin: 40px;
+}
+
+
+
+
+/*contato*/
+#contato{
+    background-size: 90vh;
+   
+}
+#redes{
+    margin-right: 30px;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
+}
+
+
+#redes img{
+    height: 50px;
+    margin: 10px ;
+}
+
